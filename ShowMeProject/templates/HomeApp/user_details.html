@@ -1,0 +1,105 @@
+user details
+
+{{ obj.root_user }}
+
+videos -->
+<br><br>
+
+{% load static %}
+
+<html lang="en">
+<!-- BEGIN: Head -->
+<head>
+    <meta charset="utf-8">
+    <link href="HomeApp/dist/images/logo.svg" rel="shortcut icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Midone admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
+    <meta name="keywords"
+          content="admin template, Midone admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="LEFT4CODE">
+    <title>Slider - Midone - Tailwind HTML Admin Template</title>
+    <!-- BEGIN: CSS Assets-->
+    <link rel="stylesheet" href="{% static 'HomeApp/dist/css/app.css' %}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- END: CSS Assets-->
+</head>
+<!-- END: Head -->
+<body class="app">
+<div class="intro-y box">
+
+
+    <div class="intro-y col-span-12 lg:col-span-8">
+        <div class="lg:flex intro-y">
+            <div class="relative text-gray-700 dark:text-gray-300">
+                <input type="text" class="input input--lg w-full lg:w-64 box pr-10 placeholder-theme-13"
+                       placeholder="Search item...">
+                <i class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0" data-feather="search"></i>
+            </div>
+            <select class="input input--lg box w-full lg:w-auto mt-3 lg:mt-0 ml-auto">
+                <option>Sort By</option>
+                <option>A to Z</option>
+                <option>Z to A</option>
+                <option>Lowest Price</option>
+                <option>Highest Price</option>
+            </select>
+        </div>
+
+
+        <div class="grid grid-cols-12 gap-5 mt-5 pt-5 border-t border-theme-5">
+
+            {% for i in vid_obj %}
+
+                <a href="javascript:;" data-toggle="modal" data-target="#add-item-modal"
+                   class="intro-y block col-span-6 sm:col-span-4 xl:col-span-3">
+                    <div class="box rounded-md p-3 relative zoom-in">
+                        <div class="flex-none pos-image relative block">
+                            <div class="pos-image__preview image-fit">
+                                <center>
+                                    <video src="{{ i.video_file.url }}" width="160" controls=""> No video support in
+                                        this
+                                        browser.
+                                    </video>
+                                </center>
+                            </div>
+                        </div>
+                        <div class="block font-medium text-center truncate mt-3">{{ i.video_caption }}</div>
+                    </div>
+                </a>
+
+            {% endfor %}
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<!-- buttons -->
+<!-- <div class="intro-y grid grid-cols-5 sm:gap-6 row-gap-6 box px-5 py-8 mt-5">
+    <div class="col-span-1 sm:col-span-3 lg:col-span-2 xl:col-span-1">
+        <a href="/"><i data-feather="home" class="mx-auto"></i></a>
+    </div>
+    <div class="col-span-1 sm:col-span-3 lg:col-span-2 xl:col-span-1">
+        <i data-feather="search" class="mx-auto"></i>
+    </div>
+    <div class="col-span-1 sm:col-span-3 lg:col-span-2 xl:col-span-1">
+        <i data-feather="plus-circle" class="mx-auto"></i>
+    </div>
+    <div class="col-span-1 sm:col-span-3 lg:col-span-2 xl:col-span-1">
+        <i data-feather="zap" class="mx-auto"></i>
+    </div>
+    <div class="col-span-1 sm:col-span-3 lg:col-span-2 xl:col-span-1">
+        <a href="/Account/profile/"><i data-feather="user" class="mx-auto"></i></a>
+    </div>
+</div> -->
+
+
+<!-- END: Dark Mode Switcher-->
+<!-- BEGIN: JS Assets-->
+<script src="{% static 'HomeApp/dist/js/app.js' %}"></script>
+<!-- END: JS Assets-->
+</body>
+</html>

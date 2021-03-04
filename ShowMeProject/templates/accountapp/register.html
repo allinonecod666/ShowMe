@@ -1,0 +1,17 @@
+<center>register...</center>
+
+
+<form method="post">
+    {% csrf_token %}
+
+    <label>Enter Your Phone Number</label>
+    {{form_usr.username}}
+    <label>Enter Password</label>
+    {{form_usr.password1}}
+    <label>Enter Re-Password</label>
+    {{form_usr.password2}}
+
+
+
+    <button type="submit">Register</button>
+</form>

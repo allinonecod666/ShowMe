@@ -1,0 +1,26 @@
+{% if usr.is_authenticated %}
+
+
+    <br><br>
+    <center>This Is Landing Page...</center>
+    <br><br>
+    <br><br>
+    <center><h1><font color="red"><a href="/watching/">WATCH NOW</a> </font></h1></center>
+    <br><br>
+    <center><h1><font color="red"><a href="/user_account/">Profile : {{ usr }} </a> </font></h1></center>
+    <center><h1><font color="red"><a href="{% url 'logout' %}">Logout</a> </font></h1></center>
+
+
+{% else %}
+
+
+    <br><br>
+    <center>This Is Landing Page...</center>
+    <br><br>
+    <center><h1><font color="red"><a href="/watching/">WATCH NOW</a> </font></h1></center>
+    <br><br>
+    <center><h3><font color="blue"><a href="/Account/register/">Register</a> </font></h3>
+        <h3><font color="blue"><a href="/Account/login/">Login</a> </font></h3></center>
+
+
+{% endif %}
